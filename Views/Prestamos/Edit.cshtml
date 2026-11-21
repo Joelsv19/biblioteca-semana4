@@ -1,0 +1,47 @@
+@model BibliotecaSemana4.Models.Prestamo
+
+@{
+    ViewData["Title"] = "Editar préstamo";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post" class="formulario">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="LibroId"></label>
+        <select asp-for="LibroId" class="form-control" asp-items="ViewBag.LibroId" required>
+            <option value="">Selecciona un libro</option>
+        </select>
+        <span asp-validation-for="LibroId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LectorId"></label>
+        <select asp-for="LectorId" class="form-control" asp-items="ViewBag.LectorId" required>
+            <option value="">Selecciona un lector</option>
+        </select>
+        <span asp-validation-for="LectorId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FechaPrestamo"></label>
+        <input asp-for="FechaPrestamo" class="form-control" required />
+        <span asp-validation-for="FechaPrestamo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FechaDevolucion"></label>
+        <input asp-for="FechaDevolucion" class="form-control" />
+        <span asp-validation-for="FechaDevolucion" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Guardar" class="btn btn-primary" />
+    </div>
+</form>
+
+<p>
+    <a asp-action="Index">Volver al listado</a>
+</p>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

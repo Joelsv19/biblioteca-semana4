@@ -1,0 +1,54 @@
+@model IEnumerable<BibliotecaSemana4.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Categorías";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Registrar categoría</a>
+</p>
+<div class="tabla-contenedor" tabindex="0" role="region" aria-label="Listado de categorías">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Codigo)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Activa)
+                </th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo)
+                    </td>
+                    <td>
+                        @(item.Activa ? "Sí" : "No")
+                    </td>
+                    <td>
+                        <partial name="_AccionesCrud" model="item.Id" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

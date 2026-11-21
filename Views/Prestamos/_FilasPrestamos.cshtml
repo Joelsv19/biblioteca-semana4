@@ -1,0 +1,22 @@
+@model IEnumerable<Prestamo>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaPrestamo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaDevolucion)
+        </td>
+        <td>
+            @item.Libro?.Titulo
+        </td>
+        <td>
+            @item.Lector?.Nombre @item.Lector?.Apellido
+        </td>
+        <td>
+            <partial name="_AccionesCrud" model="item.Id" />
+        </td>
+    </tr>
+}

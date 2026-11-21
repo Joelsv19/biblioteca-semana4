@@ -1,0 +1,38 @@
+@model BibliotecaSemana4.Models.Categoria
+
+@{
+    ViewData["Title"] = "Detalles de la categoría";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<dl>
+    <dt>
+        @Html.DisplayNameFor(model => model.Nombre)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Nombre)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Descripcion)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Descripcion)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Codigo)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Codigo)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Activa)
+    </dt>
+    <dd>
+        @(Model.Activa ? "Sí" : "No")
+    </dd>
+</dl>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Volver al listado</a>
+</p>

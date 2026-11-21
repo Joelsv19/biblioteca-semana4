@@ -1,0 +1,41 @@
+@model IEnumerable<BibliotecaSemana4.Models.Prestamo>
+
+@{
+    ViewData["Title"] = "Préstamos";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Registrar préstamo</a>
+    <button type="button" class="btn" id="actualizar-prestamos" data-url="@Url.Action("Todos")">Actualizar listado</button>
+</p>
+<p class="estado-listado" id="estado-prestamos" role="status"></p>
+<div class="tabla-contenedor" tabindex="0" role="region" aria-label="Listado de préstamos">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.FechaPrestamo)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.FechaDevolucion)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Libro)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Lector)
+                </th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="filas-prestamos">
+            <partial name="_FilasPrestamos" model="Model" />
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script src="~/js/prestamos.js" asp-append-version="true"></script>
+}

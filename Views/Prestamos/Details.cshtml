@@ -1,0 +1,38 @@
+@model BibliotecaSemana4.Models.Prestamo
+
+@{
+    ViewData["Title"] = "Detalles del préstamo";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<dl>
+    <dt>
+        @Html.DisplayNameFor(model => model.FechaPrestamo)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.FechaPrestamo)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.FechaDevolucion)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.FechaDevolucion)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Libro)
+    </dt>
+    <dd>
+        @Model.Libro?.Titulo
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Lector)
+    </dt>
+    <dd>
+        @Model.Lector?.Nombre @Model.Lector?.Apellido
+    </dd>
+</dl>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Volver al listado</a>
+</p>

@@ -1,0 +1,38 @@
+@model BibliotecaSemana4.Models.Libro
+
+@{
+    ViewData["Title"] = "Detalles del libro";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<dl>
+    <dt>
+        @Html.DisplayNameFor(model => model.Titulo)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Titulo)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.AnioPublicacion)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.AnioPublicacion)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Autor)
+    </dt>
+    <dd>
+        @Model.Autor?.Nombre @Model.Autor?.Apellido
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Categoria)
+    </dt>
+    <dd>
+        @Model.Categoria?.Nombre
+    </dd>
+</dl>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Volver al listado</a>
+</p>

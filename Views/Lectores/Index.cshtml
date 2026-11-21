@@ -1,0 +1,54 @@
+@model IEnumerable<BibliotecaSemana4.Models.Lector>
+
+@{
+    ViewData["Title"] = "Lectores";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Registrar lector</a>
+</p>
+<div class="tabla-contenedor" tabindex="0" role="region" aria-label="Listado de lectores">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Apellido)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Correo)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Correo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        <partial name="_AccionesCrud" model="item.Id" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

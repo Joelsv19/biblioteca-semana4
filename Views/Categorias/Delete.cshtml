@@ -1,0 +1,41 @@
+@model BibliotecaSemana4.Models.Categoria
+
+@{
+    ViewData["Title"] = "Eliminar categoría";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>¿Deseas eliminar este registro?</p>
+<dl>
+    <dt>
+        @Html.DisplayNameFor(model => model.Nombre)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Nombre)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Descripcion)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Descripcion)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Codigo)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Codigo)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Activa)
+    </dt>
+    <dd>
+        @(Model.Activa ? "Sí" : "No")
+    </dd>
+</dl>
+
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Eliminar" class="btn" />
+    <a asp-action="Index">Volver al listado</a>
+</form>

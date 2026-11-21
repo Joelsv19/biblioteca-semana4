@@ -1,0 +1,190 @@
+:root {
+    font-family: Arial, "Segoe UI", sans-serif;
+    color: #242b33;
+    background: #fff;
+    line-height: 1.5;
+}
+
+body {
+    margin: 0;
+}
+
+.contenedor {
+    box-sizing: border-box;
+    width: min(100%, 65rem);
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.encabezado {
+    background: #f0f4f8;
+    border-bottom: 1px solid #d4dce4;
+}
+
+.encabezado .contenedor,
+nav,
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem 1rem;
+}
+
+.encabezado .contenedor {
+    padding-block: .8rem;
+    column-gap: 2rem;
+}
+
+.contenido {
+    padding-block: 1.4rem 2rem;
+}
+
+.marca {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+}
+
+a,
+.boton-enlace {
+    color: #184e80;
+}
+
+a:hover,
+.boton-enlace:hover {
+    color: #0f355a;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    min-width: 43rem;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    min-width: 6rem;
+    padding: .55rem .7rem;
+    border: 1px solid #d4dce4;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.table th {
+    background: #f0f4f8;
+}
+
+.acciones {
+    min-width: 12rem;
+}
+
+.formulario {
+    max-width: 32rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-control {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 2.35rem;
+    padding: .4rem .55rem;
+    border: 1px solid #83919f;
+    border-radius: .2rem;
+    background-color: #fff;
+    color: inherit;
+    font: inherit;
+}
+
+.btn,
+.swal2-confirm.boton-dialogo,
+.swal2-cancel.boton-dialogo {
+    display: inline-block;
+    padding: .4rem .75rem;
+    border: 1px solid #7890a5;
+    border-radius: .2rem;
+    background: #f0f4f8;
+    color: #184e80;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary,
+.swal2-confirm.boton-dialogo {
+    border-color: #235b8c;
+    background: #235b8c;
+    color: #fff;
+}
+
+button:disabled {
+    cursor: wait;
+}
+
+.text-danger,
+.aviso-error,
+.eliminar {
+    color: #9b2626;
+}
+
+.aviso {
+    padding: .6rem .8rem;
+    border-left: .25rem solid #235b8c;
+    background: #f0f4f8;
+}
+
+.aviso-error {
+    border-left-color: #9b2626;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+dl {
+    margin-bottom: 1.25rem;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 0 .6rem;
+    overflow-wrap: anywhere;
+}
+
+.estado-listado:empty {
+    display: none;
+}
+
+@media (max-width: 32rem) {
+    .encabezado .contenedor {
+        display: block;
+    }
+
+    nav {
+        margin-top: .45rem;
+    }
+
+    .table th,
+    .table td {
+        padding: .4rem .5rem;
+    }
+}
