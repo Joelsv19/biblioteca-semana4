@@ -62,10 +62,3 @@ En los listados, SweetAlert2 pide confirmación antes de enviar el formulario PO
 
 Referencias de clase [Factura](https://github.com/lleroc/Sexto_om27/tree/f7e80b2241a0cd1471d1cd98bff473ce3b3ad0d6/Factura) y [Provincias](https://github.com/lleroc/Sexto_om27/tree/f7e80b2241a0cd1471d1cd98bff473ce3b3ad0d6/Provincias), en especial los ejemplos de Cantón y Habitante.
 
-## Pruebas realizadas
-
-- `dotnet restore` y `dotnet build` terminaron con 0 advertencias y 0 errores de compilación.
-- La migración `InicialBiblioteca` se aplicó a MariaDB. Al repetir el comando, EF Core indicó que la base estaba al día.
-- Consulté `information_schema` y comprobé cinco tablas de la aplicación, cinco columnas por tabla, cinco claves primarias y cuatro claves foráneas con `RESTRICT`. `FechaDevolucion` es la única columna opcional. En XAMPP para Windows, MariaDB muestra los nombres físicos de las tablas en minúscula. `__EFMigrationsHistory` guarda el historial técnico.
-- Ejecuté 47 comprobaciones en Microsoft Edge y mediante HTTP. Incluyeron el CRUD de las cinco entidades, formularios válidos e inválidos, los cuatro desplegables, datos relacionados, AJAX, cancelación y confirmación de borrado, bloqueo de registros relacionados, y rechazo de un POST sin token con HTTP 400.
-- Revisé la vista de escritorio y a 360 px, con desplazamiento horizontal en la tabla. El recorrido final quedó sin errores de JavaScript ni respuestas HTTP 5xx.
